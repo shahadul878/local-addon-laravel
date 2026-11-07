@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="assets/icon.png" width="112" height="112" alt="Laravel for Local icon">
+  <img src="docs/social-preview.png" width="100%" alt="Laravel for Local: install, configure and manage Laravel inside any Local site, in one click">
 </p>
 
-<h1 align="center">Laravel for Local</h1>
+<h1 align="center"><img src="assets/icon.png" width="36" height="36" alt="" align="top"> Laravel for Local</h1>
 
 <p align="center">
   Install, configure and manage a <strong>Laravel</strong> app inside any <a href="https://localwp.com">Local</a> site, in one click.<br>
@@ -155,6 +155,7 @@ lib/
 scripts/
   install-addon.js   installs, links or removes the add-on
   make-icon.py       renders assets/icon.png
+  render-preview.js  renders docs/social-preview.png from social-preview.html
 ```
 
 The tests use Node's built-in runner and need no PHP, Local or network. See [CONTRIBUTING.md](CONTRIBUTING.md).
@@ -173,7 +174,10 @@ Reports from macOS and Windows users are very welcome. Please [open an issue](ht
 
 ## Credits
 
-The add-on icon uses the official Laravel logomark from [laravel/art](https://github.com/laravel/art). To re-render it, run `python3 scripts/make-icon.py assets/icon.png` (needs Pillow and cairosvg).
+The add-on icon uses the official Laravel logomark from [laravel/art](https://github.com/laravel/art).
+
+- To re-render the icon, run `python3 scripts/make-icon.py assets/icon.png` (needs Pillow and cairosvg).
+- To re-render the banner from `scripts/social-preview.html`, run `node scripts/render-preview.js` (needs Chrome).
 
 Laravel and the Laravel logo are trademarks of Laravel Holdings Inc. Local is a product of WP Engine. This is an independent project, not affiliated with or endorsed by either.
 

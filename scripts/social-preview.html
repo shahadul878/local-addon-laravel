@@ -1,0 +1,127 @@
+<!doctype html>
+<!--
+  Source for docs/social-preview.png (1280×640, GitHub's social-preview size).
+  Re-render with: node scripts/render-preview.js
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Laravel for Local, social preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=block" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0d10;
+    --panel: #17171c;
+    --panel-edge: rgba(255, 255, 255, 0.08);
+    --text: #f4f4f5;
+    --muted: #a1a1aa;
+    --red: #ff2d20;
+    --green: #34d399;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1280px; height: 640px; overflow: hidden; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Instrument Sans', Inter, system-ui, sans-serif;
+    position: relative;
+  }
+  /* Atmosphere: faint grid + a warm glow behind the panel. */
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse 80% 90% at 70% 50%, #000 30%, transparent 75%);
+  }
+  .glow {
+    position: absolute; width: 760px; height: 760px; right: -160px; top: -60px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,45,32,0.30), rgba(255,45,32,0) 62%);
+  }
+  .layout {
+    position: relative; display: grid; grid-template-columns: 580px 1fr; gap: 48px;
+    height: 100%; padding: 72px 72px 64px 80px; align-items: center;
+  }
+
+  .brand { display: flex; align-items: center; gap: 18px; margin-bottom: 34px; }
+  .brand img { width: 76px; height: 76px; filter: drop-shadow(0 14px 30px rgba(255,45,32,0.35)); }
+  .eyebrow { font-family: var(--mono); font-size: 15px; color: var(--muted); letter-spacing: 0.04em; }
+  .eyebrow b { color: var(--red); font-weight: 500; }
+  h1 { font-size: 74px; line-height: 0.98; letter-spacing: -0.035em; font-weight: 700; }
+  h1 span { color: var(--red); }
+  .lede { margin-top: 24px; font-size: 23px; line-height: 1.42; color: #d4d4d8; max-width: 520px; }
+  .chips { display: flex; flex-wrap: nowrap; gap: 8px; margin-top: 34px; }
+  .chip {
+    font-size: 14px; font-weight: 600; padding: 7px 12px; border-radius: 999px; white-space: nowrap;
+    border: 1px solid var(--panel-edge); background: rgba(255,255,255,0.04); color: #e4e4e7;
+  }
+  .chip i { font-style: normal; color: var(--red); margin-right: 5px; font-size: 11px; }
+
+  /* Right: a faithful mock of the add-on's install panel. */
+  .panel {
+    background: linear-gradient(180deg, #1c1c22, var(--panel));
+    border: 1px solid var(--panel-edge); border-radius: 18px; padding: 26px 26px 22px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,45,32,0.06);
+    border-top: 3px solid var(--red);
+  }
+  .panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+  .panel-title { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .badge { font-size: 13px; font-weight: 600; color: var(--green); border: 1px solid rgba(52,211,153,0.5); padding: 3px 10px; border-radius: 999px; }
+  .steps { list-style: none; padding: 0; display: grid; gap: 11px; }
+  .steps li { display: grid; grid-template-columns: 18px 1fr auto; gap: 12px; align-items: center; font-size: 17px; font-weight: 500; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(52,211,153,0.12); }
+  .steps small { font-family: var(--mono); font-size: 13px; color: var(--muted); }
+  .term {
+    margin-top: 20px; background: #0a0a0c; border-radius: 12px; padding: 16px 18px;
+    font-family: var(--mono); font-size: 14px; line-height: 1.7; color: #d4d4d8;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .term .p { color: var(--red); }
+  .term .ok { color: var(--green); }
+  .term .dim { color: #71717a; }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="glow"></div>
+  <main class="layout">
+    <section>
+      <div class="brand">
+        <img src="../assets/icon.png" alt="">
+        <div class="eyebrow"><b>●</b> add-on for Local · localwp.com</div>
+      </div>
+      <h1>Laravel<br>for <span>Local</span></h1>
+      <p class="lede">Install, configure and manage Laravel inside any Local site, in one click.</p>
+      <div class="chips">
+        <span class="chip"><i>◆</i>Laravel 12 · 13</span>
+        <span class="chip"><i>◆</i>PHP · MySQL · Mailpit</span>
+        <span class="chip"><i>◆</i>.env auto-sync</span>
+        <span class="chip"><i>◆</i>Artisan runner</span>
+      </div>
+    </section>
+
+    <section class="panel" aria-label="Install progress">
+      <div class="panel-head">
+        <span class="panel-title">Installing Laravel 13</span>
+        <span class="badge">Done in 11 s</span>
+      </div>
+      <ul class="steps">
+        <li><span class="dot"></span>Get Composer<small>verified</small></li>
+        <li><span class="dot"></span>Download Laravel<small>v13.40.0</small></li>
+        <li><span class="dot"></span>Point the web root at Laravel<small>app/public</small></li>
+        <li><span class="dot"></span>Write .env for this site<small>blog.local</small></li>
+        <li><span class="dot"></span>Run migrations<small>3 ran</small></li>
+      </ul>
+      <div class="term">
+        <div><span class="p">$</span> php artisan migrate --force</div>
+        <div class="dim">  Creating migration table ........ DONE</div>
+        <div>  create_users_table ............. <span class="ok">DONE</span></div>
+        <div>  create_jobs_table .............. <span class="ok">DONE</span></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
