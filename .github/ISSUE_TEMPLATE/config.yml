@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: User Guide
+    url: https://github.com/shahadul878/local-addon-laravel/blob/main/docs/USER_GUIDE.md
+    about: Setup steps, troubleshooting and FAQ.

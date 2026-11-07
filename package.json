@@ -1,0 +1,52 @@
+{
+  "name": "local-addon-laravel",
+  "productName": "Laravel",
+  "version": "1.0.0",
+  "description": "Install, configure and manage a Laravel app inside any Local site.",
+  "keywords": [
+    "local",
+    "localwp",
+    "local-addon",
+    "laravel",
+    "php",
+    "composer",
+    "artisan",
+    "mysql",
+    "mailpit"
+  ],
+  "homepage": "https://github.com/shahadul878/local-addon-laravel#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shahadul878/local-addon-laravel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shahadul878/local-addon-laravel/issues"
+  },
+  "author": "Shahadul",
+  "license": "MIT",
+  "main": "lib/main.js",
+  "renderer": "lib/renderer.js",
+  "icon": "assets/icon.png",
+  "bgColor": "#c2240b",
+  "engines": {
+    "local-by-flywheel": ">=6.0.0",
+    "node": ">=18"
+  },
+  "files": [
+    "lib",
+    "assets",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "coverage": "node --test --experimental-test-coverage test/*.test.js",
+    "install-addon": "node scripts/install-addon.js",
+    "link-addon": "node scripts/install-addon.js --link",
+    "uninstall-addon": "node scripts/install-addon.js --remove"
+  },
+  "devDependencies": {
+    "react": "16.14.0",
+    "react-test-renderer": "16.14.0"
+  }
+}

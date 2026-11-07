@@ -1,0 +1,43 @@
+name: Bug report
+description: Something in the Laravel tab didn't work as expected
+labels: [bug]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you clicked, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Terminal output
+      description: Use "Copy output" in the Laravel tab and paste it here.
+      render: text
+  - type: textarea
+    id: log
+    attributes:
+      label: Add-on log
+      description: Relevant lines from `<Local data>/laravel/addon.log` (Linux `~/.config/Local`, macOS `~/Library/Application Support/Local`, Windows `%APPDATA%\Local`).
+      render: text
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: Ubuntu 24.04 / macOS 15 / Windows 11
+    validations:
+      required: true
+  - type: input
+    id: local
+    attributes:
+      label: Local version
+      placeholder: "10.2.0"
+    validations:
+      required: true
+  - type: input
+    id: site
+    attributes:
+      label: Site setup
+      description: PHP version, database (MySQL/MariaDB + version), web server (nginx/Apache), Laravel version
+      placeholder: PHP 8.4.18, MySQL 8.4.0, nginx, Laravel 13
